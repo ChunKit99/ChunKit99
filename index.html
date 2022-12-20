@@ -271,13 +271,22 @@
                         <h2>Contact</h2>
                     </header>
                     <p>
-                        If you want to know more about me, or if you would just like to say hello, send me a message. I'd love to hear from you.
+                        If you want to know more about me, or if you would just like to say hello, send me a message or <a href="mailto:liewchunkit99@gmail.com">email to me</a>. I'd love to hear from you.
                     </p>
-                    <form method="post" action="mailto:liewchunkit99@gmail.com">
-                        <input type="submit" value="Send me message">
+                </div>
+                <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSdIur2x4dlGuPITnXO9o-u2TKXUpq3q34q73m5AOz5iz1Z0Nw/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+                    <div class="row">
+                        <div class="col-6 col-12-mobile"><input type="text" name="entry.1237477428" id="entry.1237477428" placeholder="Name" /></div>
+                        <div class="col-6 col-12-mobile"><input type="text" name="entry.1297433157" id="entry.1297433157" placeholder="Email" /></div>
+                        <div class="col-12">
+                            <textarea name="entry.1040387569" id="entry.1040387569" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Send Message" />
+                        </div>
                     </div>
                 </form>
-            </div>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
         </section>
     </div>
     <!-- Footer -->
@@ -299,5 +308,13 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">var submitted=false;</script>
+    <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+    $('#gform *').fadeOut(2000);
+    $('#gform').prepend('Your message has been submitted, thank you!!');
+    });
+    </script>
 </body>
 </html>
